@@ -1,4 +1,4 @@
-package UC3;
+package UC4;
 
 public class MyLinkedList<K> {
 
@@ -33,6 +33,12 @@ public class MyLinkedList<K> {
             this.tail.setNext(newNode);
             this.tail = newNode;
         }
+    }
+
+    public void insert(INode<K> newNode, INode<K> myNewNode) {
+        INode<K> tempNode = newNode.getNext();
+        newNode.setNext(myNewNode);
+        myNewNode.setNext(tempNode);
     }
 
     public void printMyNode() {
