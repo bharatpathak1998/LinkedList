@@ -1,4 +1,4 @@
-package UC5;
+package UC6;
 
 public class MyNode<K> implements INode<K> {
 

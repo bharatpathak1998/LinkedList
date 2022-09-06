@@ -1,4 +1,4 @@
-package UC5;
+package UC6;
 
 public class MyLinkedListMain {
     public static void main(String[] args) {
@@ -12,8 +12,8 @@ public class MyLinkedListMain {
         myLinkedList.insert(myFirstNode, myThirdNode);
         myLinkedList.printMyNode();
 
-        System.out.println("After Deleting First Element Using Pop First Method : ");
-        myLinkedList.popFirst();
+        System.out.println("After Deleting Last Element Using Pop Last Method : ");
+        myLinkedList.popLast();
         myLinkedList.printMyNode();
     }
 }

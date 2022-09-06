@@ -1,4 +1,4 @@
-package UC5;
+package UC6;
 
 public class MyLinkedList<K> {
 
@@ -44,6 +44,17 @@ public class MyLinkedList<K> {
     public INode<K> popFirst() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
+        return tempNode;
+    }
+
+    public INode<K> popLast() {
+        INode<K> tempNode = head;
+        INode<K> prevNode = null;
+        while (tempNode != null && tempNode.getNext() !=null) {
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        prevNode.setNext(null);
         return tempNode;
     }
 
