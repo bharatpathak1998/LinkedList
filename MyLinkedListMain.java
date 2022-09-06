@@ -1,4 +1,4 @@
-package UC8;
+package UC9;
 
 public class MyLinkedListMain {
     public static void main(String[] args) {
@@ -16,5 +16,8 @@ public class MyLinkedListMain {
 
         myLinkedList.insert(myThirdNode, myFourthNode);
         myLinkedList.printMyNode();
+        myLinkedList.deleteNode(myFourthNode);
+        myLinkedList.printMyNode();
+        myLinkedList.size();
     }
 }

@@ -1,4 +1,4 @@
-package UC8;
+package UC9;
 
 public class MyLinkedList<K> {
 
@@ -50,7 +50,7 @@ public class MyLinkedList<K> {
     public INode<K> popLast() {
         INode<K> tempNode = head;
         INode<K> prevNode = null;
-        while (tempNode != null && tempNode.getNext() !=null) {
+        while (tempNode != null && tempNode.getNext() != null) {
             prevNode = tempNode;
             tempNode = tempNode.getNext();
         }
@@ -60,7 +60,7 @@ public class MyLinkedList<K> {
 
     public INode<K> search(K key) {
         INode<K> tempNode = head;
-        while (tempNode != null && tempNode.getNext() !=null) {
+        while (tempNode != null && tempNode.getNext() != null) {
             if (tempNode.getKey().equals(key)) {
                 return tempNode;
             }
@@ -69,7 +69,33 @@ public class MyLinkedList<K> {
         return null;
     }
 
+    public void deleteNode(INode<K> myNewNode) {
+        INode<K> tempNode = head;
+        INode<K> prevNode = null;
+        while (tempNode != null && tempNode.getKey() != myNewNode.getKey()) {
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        prevNode.setNext(tempNode.getNext());
+    }
+
+    public int size() {
+        INode<K> tempNode = head;
+        int count = 0;
+        if (tempNode != null) {
+            while ((tempNode.getNext() != null || (tempNode.getKey() != null))) {
+                tempNode = tempNode.getNext();
+                count++;
+                if (tempNode == null) {
+                    break;
+                }
+            }
+            System.out.println("Size Of Linked list : "+count);
+        }
+        return count;
+    }
+
     public void printMyNode() {
-        System.out.println("My Nodes : "+head);
+        System.out.println("My Nodes : " + head);
     }
 }
