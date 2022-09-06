@@ -1,4 +1,4 @@
-package UC6;
+package UC7;
 
 public class MyLinkedList<K> {
 
@@ -56,6 +56,17 @@ public class MyLinkedList<K> {
         }
         prevNode.setNext(null);
         return tempNode;
+    }
+
+    public INode<K> search(K key) {
+        INode<K> tempNode = head;
+        while (tempNode != null && tempNode.getNext() !=null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
     }
 
     public void printMyNode() {
